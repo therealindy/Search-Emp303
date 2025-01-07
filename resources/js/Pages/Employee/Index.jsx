@@ -38,6 +38,7 @@ export default function Index({ employees, query }) {
                             </button>
                         </div>
                     </form>
+
                     <div className="px-8 mx-auto max-w-7xl sm:px-6 py-2">
                         {/* ตารางแสดงข้อมูลพนักงาน */}
                         <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
@@ -64,16 +65,17 @@ export default function Index({ employees, query }) {
                             </tbody>
                         </table>
                         {/* ปุ่มสำหรับเปลี่ยนหน้า */}
-                        <div className="flex justify-center w-full max-w-2xl mx-auto py-5 space-x-12">        {/* ปุ่มสำหรับเปลี่ยนหน้า */}                    <button
-                            onClick={() =>
-                                employees.prev_page_url &&
-                                window.location.assign(employees.prev_page_url)
-                            }
-                            disabled={!employees.prev_page_url}
-                            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-                        >
-                            Previous
-                        </button>
+                        <div className="flex justify-center w-full max-w-2xl mx-auto py-5 space-x-12">
+                            <button
+                                onClick={() =>
+                                    employees.prev_page_url &&
+                                    window.location.assign(employees.prev_page_url)
+                                }
+                                disabled={!employees.prev_page_url}
+                                className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                            >
+                                Previous
+                            </button>
                             <button
                                 onClick={() =>
                                     employees.next_page_url &&
@@ -86,6 +88,7 @@ export default function Index({ employees, query }) {
                             </button>
                         </div>
                     </div>
+
                 </div>
             </AuthenticatedLayout>
         </>
