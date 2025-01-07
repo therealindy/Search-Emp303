@@ -9,7 +9,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Http\Controllers\Controller;
 
-//หน้านี้มีหน้าที่เป็นตัวควบคุม (Controller) ใน Laravel สำหรับจัดการกับข้อมูลพนักงาน (Employee)
+//หน้านี้มีหน้าที่เป็นตัวควบคุม Controller ใน Laravel สำหรับจัดการกับข้อมูลพนักงาน Employee
 
 class EmployeeController extends Controller
 {
@@ -18,7 +18,7 @@ class EmployeeController extends Controller
      */
     public function index(Request $request)
     {
-        $query = $request->input('search', ''); // รับค่าค้นหาจากคำขอ (request) ถ้าไม่มีจะใช้ค่าว่าง จะหาข้อความได้ทั้งชื่อหรือนามสกุล
+        $query = $request->input('search', ''); // รับค่าค้นหาจาก request ถ้าไม่มีจะใช้ค่าว่าง จะหาข้อความได้ทั้งชื่อหรือนามสกุล
         $employees =DB::table('employees')      // ค้นหาพนักงานจากฐานข้อมูลที่มีชื่อหรือนามสกุลตรงกับคำค้นหา
         ->where('first_name','like','%' . $query . '%')
         ->orWhere('last_name','like','%' . $query . '%')
