@@ -8,10 +8,6 @@ use Inertia\Inertia;
 
 //หน้าที่คือการเรียกใช้ข้อมูลจากEmployeeController
 
-// เส้นทางเพื่อแสดงหน้า Employee index โดยใช้ Inertia
-Route::get('/employee', function() {
-    return Inertia::render('Employee/Index');
-});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
