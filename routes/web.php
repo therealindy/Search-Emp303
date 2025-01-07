@@ -6,8 +6,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-//หน้าที่คือการเรียกใช้ข้อมูลจากProductController
+//หน้าที่คือการเรียกใช้ข้อมูลจากEmployeeController
 
+// เส้นทางเพื่อแสดงหน้า Employee index โดยใช้ Inertia
 Route::get('/employee', function() {
     return Inertia::render('Employee/Index');
 });
@@ -31,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index'); //เปลี่ยนชื่อให้ใช้งานง่ายขึ้น
+    Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index'); //เส้นทางเพื่อแสดงรายการพนักงาน จัดการโดย EmployeeController จะเปลี่ยนชื่อให้ใช้งานง่ายขึ้น
 });
 
 require __DIR__.'/auth.php';

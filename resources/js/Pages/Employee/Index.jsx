@@ -3,11 +3,12 @@ import { useState } from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 export default function Index({ employees, query }) {
-    const [search, setSearch] = useState(query || '');
+    const [search, setSearch] = useState(query || ''); // สร้าง state สำหรับเก็บค่าค้นหา
 
+    // ฟังก์ชันสำหรับจัดการการค้นหา
     const handleSearch = (e) => {
         e.preventDefault();
-        router.get('/employee', { search });
+        router.get('/employee', { search });        // ส่งคำขอค้นหาไปยังเส้นทาง /employee
     };
 
     return (
@@ -20,6 +21,7 @@ export default function Index({ employees, query }) {
                 }
             >
                 <div>
+                    {/* ฟอร์มสำหรับการค้นหา */}
                     <form onSubmit={handleSearch} className="px-8 mx-auto max-w-7xl sm:px-6 py-2 ">
                         <div className="flex justify-center w-full max-w-2xl mx-auto py-5">
                             <input
@@ -37,6 +39,7 @@ export default function Index({ employees, query }) {
                         </div>
                     </form>
                     <div className="px-8 mx-auto max-w-7xl sm:px-6 py-2">
+                        {/* ตารางแสดงข้อมูลพนักงาน */}
                         <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
                             <thead className="bg-gray-50">
                                 <tr>
@@ -48,6 +51,7 @@ export default function Index({ employees, query }) {
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
+                                {/* แสดงข้อมูลพนักงานแต่ละคน */}
                                 {employees.data.map((employee) => (
                                     <tr key={employee.emp_no} className="hover:bg-gray-100">
                                         <td className="px-6 py-4 text-center whitespace-nowrap text-sm font-medium text-gray-700">{employee.emp_no}</td>
@@ -59,8 +63,8 @@ export default function Index({ employees, query }) {
                                 ))}
                             </tbody>
                         </table>
-
-                        <div className="flex justify-center w-full max-w-2xl mx-auto py-5 space-x-12">                            <button
+                        {/* ปุ่มสำหรับเปลี่ยนหน้า */}
+                        <div className="flex justify-center w-full max-w-2xl mx-auto py-5 space-x-12">        {/* ปุ่มสำหรับเปลี่ยนหน้า */}                    <button
                             onClick={() =>
                                 employees.prev_page_url &&
                                 window.location.assign(employees.prev_page_url)
