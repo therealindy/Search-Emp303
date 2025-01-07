@@ -42,12 +42,12 @@ export default function Index({ employees, query }) {
                         {/* ตารางแสดงข้อมูลพนักงาน */}
                         <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
                             <thead className="bg-gray-50">
-                                <tr>
-                                    <th className="px-6 py-3 text-center text-lg font-semibold text-gray-800 uppercase tracking-wider">ID</th>
-                                    <th className="px-6 py-3 text-center text-lg font-semibold text-gray-800 uppercase tracking-wider">Name</th>
-                                    <th className="px-6 py-3 text-center text-lg font-semibold text-gray-800 uppercase tracking-wider">Last Name</th>
-                                    <th className="px-6 py-3 text-center text-lg font-semibold text-gray-800 uppercase tracking-wider">Birth</th>
-                                    <th className="px-6 py-3 text-center text-lg font-semibold text-gray-800 uppercase tracking-wider">Gender</th>
+                                <tr className="px-6 py-3 text-center text-lg font-semibold text-gray-800 uppercase tracking-wider">
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Last Name</th>
+                                    <th>Birth</th>
+                                    <th>Gender</th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
